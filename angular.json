@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "projects": {
+    "its-gonna-be-fe": {
+      "projectType": "application",
+      "root": "apps/its-gonna-be-fe",
+      "sourceRoot": "apps/its-gonna-be-fe/src",
+      "prefix": "nsync",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/its-gonna-be-fe",
+            "index": "apps/its-gonna-be-fe/src/index.html",
+            "main": "apps/its-gonna-be-fe/src/main.ts",
+            "polyfills": "apps/its-gonna-be-fe/src/polyfills.ts",
+            "tsConfig": "apps/its-gonna-be-fe/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/its-gonna-be-fe/src/favicon.ico",
+              "apps/its-gonna-be-fe/src/assets"
+            ],
+            "styles": ["apps/its-gonna-be-fe/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/its-gonna-be-fe/src/environments/environment.ts",
+                  "with": "apps/its-gonna-be-fe/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "its-gonna-be-fe:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "its-gonna-be-fe:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "its-gonna-be-fe:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/its-gonna-be-fe/src/**/*.ts",
+              "apps/its-gonna-be-fe/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/its-gonna-be-fe"],
+          "options": {
+            "jestConfig": "apps/its-gonna-be-fe/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "its-gonna-be-fe-e2e": {
+      "root": "apps/its-gonna-be-fe-e2e",
+      "sourceRoot": "apps/its-gonna-be-fe-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/its-gonna-be-fe-e2e/cypress.json",
+            "tsConfig": "apps/its-gonna-be-fe-e2e/tsconfig.e2e.json",
+            "devServerTarget": "its-gonna-be-fe:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "its-gonna-be-fe:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/its-gonna-be-fe-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "defaultProject": "its-gonna-be-fe"
+}
