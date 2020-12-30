@@ -18,4 +18,11 @@ async function bootstrap() {
   });
 }
 
-bootstrap();
+const mysqlx = require('@mysql/xdevapi');
+
+mysqlx.getSession('mysqlx://root:root@localhost:3307/billboard')
+  .then(session => {
+    console.log(session.inspect());
+    session.sql('SELECT * from `songs`;').execute().then(data => console.log(data.getResults()));
+    bootstrap();
+  });

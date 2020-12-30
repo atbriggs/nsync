@@ -35,3 +35,4 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 - `Use Nx Cloud? (It's free and doesn't require registration.) No`
 3. Ran `npm install --save-dev @nrwl/nest` to add NestJS support
 4. Ran `npx nx g @nrwl/nest:app i-want-you-backend --frontendProject=its-gonna-be-fe` to generate the back end app
+5. Ran `npm install mysql`

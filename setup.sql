@@ -1009,3 +1009,7 @@ INSERT INTO songs(Position,Artist,Song_Title,Billboard_Year) VALUES (97,'''N Syn
 INSERT INTO songs(Position,Artist,Song_Title,Billboard_Year) VALUES (98,'George Strait','Write This Down','1999');
 INSERT INTO songs(Position,Artist,Song_Title,Billboard_Year) VALUES (99,'Whitney Houston and Mariah Carey','When You Believe','1999');
 INSERT INTO songs(Position,Artist,Song_Title,Billboard_Year) VALUES (100,'Alabama feat. ''N Sync','God Must Have Spent A Little More Time On You','1999');
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+
+FLUSH PRIVILEGES;
