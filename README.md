@@ -12,6 +12,14 @@ Run `npm run build:database` to build the database image and send it to Docker.
 
 Run `npm run run:database` to run the database on port `3306`.
 
+### Connecting directly to development database
+
+Run `npm run bash:database` to open the docker container in bash.
+
+Type in `mysql -u root -p` and then supply the password: `root`
+
+Use SQL like normal. Sample: ``SELECT * from `songs`;``
+
 ## Understand your workspace
 
 Run `nx dep-graph` to see a diagram of the dependencies of your projects.
