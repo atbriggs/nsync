@@ -90,19 +90,6 @@
         }
       }
     },
-    "frontend-e2e": {
-      "root": "apps/frontend-e2e",
-      "sourceRoot": "apps/frontend-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/frontend-e2e/**/*.{js,ts}"]
-          }
-        }
-      }
-    },
     "backend": {
       "root": "apps/backend",
       "sourceRoot": "apps/backend/src",

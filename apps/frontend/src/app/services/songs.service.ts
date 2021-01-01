@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { SongPlay, SongsResponse } from "@nsync/data";
+import { SongPlay, SongsResponse } from '@nsync/data';
 
 @Injectable({
   providedIn: 'root'
