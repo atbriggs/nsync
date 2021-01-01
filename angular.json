@@ -116,20 +116,20 @@
         }
       }
     },
-    "i-want-you-backend": {
-      "root": "apps/i-want-you-backend",
-      "sourceRoot": "apps/i-want-you-backend/src",
+    "backend": {
+      "root": "apps/backend",
+      "sourceRoot": "apps/backend/src",
       "projectType": "application",
-      "prefix": "i-want-you-backend",
+      "prefix": "backend",
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
           "outputs": ["{options.outputPath}"],
           "options": {
-            "outputPath": "dist/apps/i-want-you-backend",
-            "main": "apps/i-want-you-backend/src/main.ts",
-            "tsConfig": "apps/i-want-you-backend/tsconfig.app.json",
-            "assets": ["apps/i-want-you-backend/src/assets"]
+            "outputPath": "dist/apps/backend",
+            "main": "apps/backend/src/main.ts",
+            "tsConfig": "apps/backend/tsconfig.app.json",
+            "assets": ["apps/backend/src/assets"]
           },
           "configurations": {
             "production": {
@@ -138,8 +138,8 @@
               "inspect": false,
               "fileReplacements": [
                 {
-                  "replace": "apps/i-want-you-backend/src/environments/environment.ts",
-                  "with": "apps/i-want-you-backend/src/environments/environment.prod.ts"
+                  "replace": "apps/backend/src/environments/environment.ts",
+                  "with": "apps/backend/src/environments/environment.prod.ts"
                 }
               ]
             }
@@ -148,20 +148,20 @@
         "serve": {
           "builder": "@nrwl/node:execute",
           "options": {
-            "buildTarget": "i-want-you-backend:build"
+            "buildTarget": "backend:build"
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/i-want-you-backend/**/*.ts"]
+            "lintFilePatterns": ["apps/backend/**/*.ts"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/i-want-you-backend"],
+          "outputs": ["coverage/apps/backend"],
           "options": {
-            "jestConfig": "apps/i-want-you-backend/jest.config.js",
+            "jestConfig": "apps/backend/jest.config.js",
             "passWithNoTests": true
           }
         }

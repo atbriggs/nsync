@@ -30,7 +30,7 @@
       "tags": [],
       "implicitDependencies": ["its-gonna-be-fe"]
     },
-    "i-want-you-backend": {
+    "backend": {
       "tags": []
     }
   }

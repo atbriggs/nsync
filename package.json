@@ -8,7 +8,7 @@
     "nx": "nx",
     "start": "ng serve",
     "start:frontend": "ng serve its-gonna-be-fe",
-    "start:backend": "ng serve i-want-you-backend",
+    "start:backend": "ng serve backend",
     "build": "ng build",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",

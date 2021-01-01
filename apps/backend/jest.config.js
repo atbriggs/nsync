@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: "i-want-you-backend",
+  displayName: "backend",
   preset: "../../jest.preset.js",
   globals: {
     "ts-jest": {
@@ -10,5 +10,5 @@ module.exports = {
     "^.+\\.[tj]s$": "ts-jest",
   },
   moduleFileExtensions: ["ts", "js", "html"],
-  coverageDirectory: "../../coverage/apps/i-want-you-backend",
+  coverageDirectory: "../../coverage/apps/backend",
 };
