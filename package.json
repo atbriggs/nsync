@@ -27,10 +27,7 @@
     "update": "nx migrate latest",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
-    "help": "nx help",
-    "build:database": "docker build --tag nsync-image .",
-    "run:database": "docker run -d --rm --name nsync-container nsync-image",
-    "bash:database": "docker exec -it nsync-container bash"
+    "help": "nx help"
   },
   "private": true,
   "dependencies": {
