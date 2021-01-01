@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SongsService } from './services/songs.service';
 
 @Component({
   selector: 'nsync-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
+
+  constructor(private songService: SongsService) { }
+
+  getSongs() {
+    return this.songService.songs;
+  }
 }

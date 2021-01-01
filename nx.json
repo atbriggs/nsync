@@ -32,6 +32,9 @@
     },
     "backend": {
       "tags": []
+    },
+    "data": {
+      "tags": []
     }
   }
 }

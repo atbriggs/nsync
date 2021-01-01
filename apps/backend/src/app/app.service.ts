@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import * as songPlays from "../assets/andrews-playlist.json";
-import {SongPlay} from "../types/song-play";
+import { SongPlay } from "@nsync/data";
 
 @Injectable()
 export class AppService {
