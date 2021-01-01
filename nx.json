@@ -23,12 +23,12 @@
     }
   },
   "projects": {
-    "its-gonna-be-fe": {
+    "frontend": {
       "tags": []
     },
-    "its-gonna-be-fe-e2e": {
+    "frontend-e2e": {
       "tags": [],
-      "implicitDependencies": ["its-gonna-be-fe"]
+      "implicitDependencies": ["frontend"]
     },
     "backend": {
       "tags": []
