@@ -4,7 +4,7 @@
 
 Run `npm run start:frontend` to start the front end. Navigate to http://localhost:4200/.
 
-Run `npm run start:backend` to start the back end. Navigate to http://localhost:3333/api for the base path. 
+Run `npm run start:backend` to start the back end. Navigate to http://localhost:3333/songs for the base path. 
 
 ## Understand your workspace
 
