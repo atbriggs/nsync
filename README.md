@@ -21,3 +21,5 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 - `Use Nx Cloud? (It's free and doesn't require registration.) No`
 3. Ran `npm install --save-dev @nrwl/nest` to add NestJS support
 4. Ran `npx nx g @nrwl/nest:app backend --frontendProject=frontend` to generate the back end app
+
+More in depth instructions about what was done can be found through the Nx tutorials: https://nx.dev/latest/angular/tutorial/01-create-application
