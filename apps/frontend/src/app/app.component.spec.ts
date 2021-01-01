@@ -1,31 +1,21 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { SongsService } from './services/songs.service';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [AppComponent],
-    }).compileComponents();
+  let testComponent: AppComponent;
+  const returnData = [];
+  const mockService = {
+    getSongs: jest.fn(),
+    songs: returnData
+  } as any;
+
+  beforeEach(() => {
+    mockService.getSongs.mockClear();
+    testComponent = new AppComponent(mockService as SongsService);
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'frontend'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('frontend');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain(
-      'Welcome to frontend!'
-    );
+  it('should return the data provided by the service', () => {
+    expect(testComponent.getSongs()).toBe(returnData);
   });
 });
