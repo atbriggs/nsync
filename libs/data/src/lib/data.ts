@@ -1,5 +1,5 @@
 export interface SongsResponse {
-  [index: string]: SongPlay[];
+  songPlays: SongPlay[];
 }
 
 export interface SongPlay {

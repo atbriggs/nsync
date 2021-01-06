@@ -17,7 +17,8 @@
     "paths": {
       "@nsync/data": ["libs/data/src/index.ts"]
     },
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
   "exclude": ["node_modules", "tmp"]
 }

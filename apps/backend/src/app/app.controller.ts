@@ -1,4 +1,5 @@
 import { Controller, Get } from "@nestjs/common";
+import { SongsResponse } from "@nsync/data";
 
 import { AppService } from "./app.service";
 
@@ -7,7 +8,9 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getData() {
-    return this.appService.getSongsPlayed();
+  getData(): SongsResponse {
+    return {
+      songPlays: this.appService.getSongsPlayed()
+    };
   }
 }

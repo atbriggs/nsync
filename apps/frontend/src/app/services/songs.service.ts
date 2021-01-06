@@ -14,10 +14,8 @@ export class SongsService {
   }
 
   fetchSongs(): void {
-    this.http.get<SongsResponse>('/songs').subscribe(data => {
-      Object.keys(data).forEach((key:string) => {
-        this.songs = data[key];
-      });
+    this.http.get<SongsResponse>('/songs').subscribe(response => {
+      this.songs = response.songPlays;
     });
   }
 }
