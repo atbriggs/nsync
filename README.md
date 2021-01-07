@@ -23,7 +23,7 @@
 ### Front end
 1. Remove the End Time column from the table
 1. Change it so that the data is pulled from the `/songs/listened` endpoint instead of `/songs` in `songs.service.ts` if you did the corresponding Back End challenge
-1. Make a new section on the page that shows which song was listened to multipl times
+1. Make a new section on the page that shows which song was listened to multiple times
 1. Make a new section on the page that shows the bands in order of how many of their songs were played
 
 ## How this repo was built
