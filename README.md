@@ -15,9 +15,10 @@
 
 ### Back end
 1. Modify the current endpoint to return seconds played instead of milliseconds
-1. Add another endpoint to only return songs that were actually listened to (`/songs/listened`?)
+1. Add a `/songs/greatestSongOfAllTime` endpoint that returns the string `Kiss from a Rose by Seal`. In general you wouldn't hard-code data but this is a universal truth so we're safe to break that rule here. 
+1. Add another endpoint to only return songs that were actually listened to (i.e. `/songs/listened`)
 1. Add a query parameter to one of the endpoints so that we can request only a certain band's songs be returned (i.e. `/songs?band=Spice%20Girls`)
-1. This may take a few days/weeks but you can request and download your own Spotify data and use that instead of `andrews-playlist.json`: https://www.spotify.com/ca-en/account/privacy/ (We're using a subset of my `StreamingHistory0.json` file)
+1. This may take a few days/weeks but you can request and download your own Spotify data and use that instead of `andrews-playlist.json`: https://www.spotify.com/ca-en/account/privacy/ (we're using a subset of my `StreamingHistory0.json` file)
 
 ### Front end
 1. Remove the End Time column from the table
