@@ -1,14 +1,29 @@
 # Nsync
 
-## Development server
+## Pre-requisites
 
-Run `npm run start:frontend` to start the front end. Navigate to http://localhost:4200/.
+- Node - Instructions to install can be found here: https://nodejs.dev/learn/how-to-install-nodejs (This was tested with version 12.19.0)
+- Clone this repo to your local computer
+- Navigate to the main folder in a terminal and use command `npm i` to install needed packages
 
-Run `npm run start:backend` to start the back end. Navigate to http://localhost:3333/songs for the base path. 
+## To run the apps
 
-## Understand your workspace
+- Navigate to the main folder and type command `npm run start:frontend` to start the front end. Navigate to http://localhost:4200/
+- Navigate to the main folder and type command `npm run start:backend` to start the back end. Navigate to http://localhost:3333/songs for the base path
 
-Run `nx dep-graph` to see a diagram of the dependencies of your projects.
+## The Challenges
+
+### Back end
+1. Modify the current endpoint to return seconds played instead of milliseconds
+1. Add another endpoint to only return songs that were actually listened to (`/songs/listened`?)
+1. Add a query parameter to one of the endpoints so that we can request only a certain band's songs be returned (i.e. `/songs?band=Spice%20Girls`)
+1. This may take a few days/weeks but you can request and download your own Spotify data and use that instead of `andrews-playlist.json`: https://www.spotify.com/ca-en/account/privacy/ (We're using a subset of my `StreamingHistory0.json` file)
+
+### Front end
+1. Remove the End Time column from the table
+1. Change it so that the data is pulled from the `/songs/listened` endpoint instead of `/songs` in `songs.service.ts` if you did the corresponding Back End challenge
+1. Make a new section on the page that shows which song was listened to multipl times
+1. Make a new section on the page that shows the bands in order of how many of their songs were played
 
 ## How this repo was built
 
