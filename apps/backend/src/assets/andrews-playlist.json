@@ -1,194 +1,258 @@
 [
     {
+        "songId": 1,
         "endTime": "2020-01-24 22:19",
         "artistName": "Justin Timberlake",
         "trackName": "My Love (feat. T.I.)",
-        "msPlayed": 1530
+        "msPlayed": 1530,
+        "liked": true
     },
     {
+        "songId": 2,
         "endTime": "2020-01-24 22:19",
         "artistName": "The Band",
         "trackName": "Such a Night (feat. Dr. John) - Concert Version",
-        "msPlayed": 1560
+        "msPlayed": 1560,
+        "liked": false
     },
     {
+        "songId": 3,
         "endTime": "2020-01-24 22:19",
         "artistName": "The Limiñanas",
         "trackName": "Cold Was the Ground",
-        "msPlayed": 2070
+        "msPlayed": 2070,
+        "liked": false
     },
     {
+        "songId": 4,
         "endTime": "2020-01-24 22:19",
         "artistName": "Sheryl Crow",
         "trackName": "A Change Would Do You Good",
-        "msPlayed": 3480
+        "msPlayed": 3480,
+        "liked": true
     },
     {
+        "songId": 5,
         "endTime": "2020-01-24 22:24",
         "artistName": "Wolfmother",
         "trackName": "White Unicorn",
-        "msPlayed": 304133
+        "msPlayed": 304133,
+        "liked": true
     },
     {
+        "songId": 6,
         "endTime": "2020-01-24 22:29",
         "artistName": "Warren G",
         "trackName": "Regulate",
-        "msPlayed": 248866
+        "msPlayed": 248866,
+        "liked": true
     },
     {
+        "songId": 7,
         "endTime": "2020-01-24 22:33",
         "artistName": "54-40",
         "trackName": "Love You All",
-        "msPlayed": 269333
+        "msPlayed": 269333,
+        "liked": true
     },
     {
+        "songId": 8,
         "endTime": "2020-01-24 22:36",
         "artistName": "Spice Girls",
         "trackName": "Spice Up Your Life",
-        "msPlayed": 173666
+        "msPlayed": 173666,
+        "liked": true
     },
     {
+        "songId": 9,
         "endTime": "2020-01-24 22:40",
         "artistName": "Ozzy Osbourne",
         "trackName": "Crazy Train",
-        "msPlayed": 220420
+        "msPlayed": 220420,
+        "liked": false
     },
     {
+        "songId": 10,
         "endTime": "2020-01-24 22:43",
         "artistName": "Frank Sinatra",
         "trackName": "It All Depends On You - 1998 Digital Remaster",
-        "msPlayed": 2550
+        "msPlayed": 2550,
+        "liked": false
     },
     {
+        "songId": 11,
         "endTime": "2020-01-24 22:43",
         "artistName": "Manu Chao",
         "trackName": "Me Gustas Tu",
-        "msPlayed": 85600
+        "msPlayed": 85600,
+        "liked": true
     },
     {
+        "songId": 12,
         "endTime": "2020-01-24 22:45",
         "artistName": "Electric Light Orchestra",
         "trackName": "Don't Bring Me Down",
-        "msPlayed": 120160
+        "msPlayed": 120160,
+        "liked": true
     },
     {
+        "songId": 13,
         "endTime": "2020-01-24 22:48",
         "artistName": "Spice Girls",
         "trackName": "Wannabe",
-        "msPlayed": 14072
+        "msPlayed": 14072,
+        "liked": true
     },
     {
+        "songId": 14,
         "endTime": "2020-01-24 22:48",
         "artistName": "LBL",
         "trackName": "trip on a trailer",
-        "msPlayed": 2510
+        "msPlayed": 2510,
+        "liked": true
     },
     {
+        "songId": 15,
         "endTime": "2020-01-24 22:48",
         "artistName": "Spice Girls",
         "trackName": "Who Do You Think You Are",
-        "msPlayed": 188577
+        "msPlayed": 188577,
+        "liked": false
     },
     {
+        "songId": 16,
         "endTime": "2020-01-24 22:51",
         "artistName": "Dusty Springfield",
         "trackName": "Spooky (Single Version)",
-        "msPlayed": 164933
+        "msPlayed": 164933,
+        "liked": true
     },
     {
+        "songId": 17,
         "endTime": "2020-01-24 22:52",
         "artistName": "ABBA",
         "trackName": "SOS",
-        "msPlayed": 38676
+        "msPlayed": 38676,
+        "liked": false
     },
     {
+        "songId": 18,
         "endTime": "2020-01-24 22:57",
         "artistName": "Seal",
         "trackName": "Kiss from a Rose",
-        "msPlayed": 288426
+        "msPlayed": 288426,
+        "liked": true
     },
     {
+        "songId": 19,
         "endTime": "2020-01-24 23:05",
         "artistName": "Seals and Crofts",
         "trackName": "Summer Breeze",
-        "msPlayed": 26045
+        "msPlayed": 26045,
+        "liked": false
     },
     {
+        "songId": 20,
         "endTime": "2020-01-24 23:07",
         "artistName": "Deerhunter",
         "trackName": "Revival",
-        "msPlayed": 133666
+        "msPlayed": 133666,
+        "liked": true
     },
     {
+        "songId": 21,
         "endTime": "2020-01-24 23:22",
         "artistName": "The Vines",
         "trackName": "Ride",
-        "msPlayed": 151178
+        "msPlayed": 151178,
+        "liked": true
     },
     {
+        "songId": 22,
         "endTime": "2020-01-24 23:53",
         "artistName": "The Vines",
         "trackName": "Ride",
-        "msPlayed": 129832
+        "msPlayed": 129832,
+        "liked": false
     },
     {
+        "songId": 23,
         "endTime": "2020-01-24 23:57",
         "artistName": "Broken Bells",
         "trackName": "After the Disco",
-        "msPlayed": 219293
+        "msPlayed": 219293,
+        "liked": true
     },
     {
+        "songId": 24,
         "endTime": "2020-01-24 23:59",
         "artistName": "Crumb",
         "trackName": "Recently Played",
-        "msPlayed": 120454
+        "msPlayed": 120454,
+        "liked": true
     },
     {
+        "songId": 25,
         "endTime": "2020-01-25 00:04",
         "artistName": "Butthole Surfers",
         "trackName": "Pepper",
-        "msPlayed": 297266
+        "msPlayed": 297266,
+        "liked": true
     },
     {
+        "songId": 26,
         "endTime": "2020-01-25 00:09",
         "artistName": "The Payolas",
         "trackName": "Eyes Of A Stranger",
-        "msPlayed": 298040
+        "msPlayed": 298040,
+        "liked": false
     },
     {
+        "songId": 27,
         "endTime": "2020-01-25 00:14",
         "artistName": "Led Zeppelin",
         "trackName": "What Is and What Should Never Be - 1990 Remaster",
-        "msPlayed": 283973
+        "msPlayed": 283973,
+        "liked": true
     },
     {
+        "songId": 28,
         "endTime": "2020-01-25 00:17",
         "artistName": "Ace of Base",
         "trackName": "All That She Wants",
-        "msPlayed": 211213
+        "msPlayed": 211213,
+        "liked": true
     },
     {
+        "songId": 29,
         "endTime": "2020-01-25 00:23",
         "artistName": "The B-52's",
         "trackName": "Love Shack",
-        "msPlayed": 321573
+        "msPlayed": 321573,
+        "liked": true
     },
     {
+        "songId": 30,
         "endTime": "2020-01-25 00:26",
         "artistName": "Henry Mancini",
         "trackName": "Pink Panther Theme",
-        "msPlayed": 161600
+        "msPlayed": 161600,
+        "liked": false
     },
     {
+        "songId": 31,
         "endTime": "2020-01-25 00:26",
         "artistName": "Steve Miller Band",
         "trackName": "Fly Like An Eagle",
-        "msPlayed": 4383
+        "msPlayed": 4383,
+        "liked": true
     },
     {
+        "songId": 32,
         "endTime": "2020-01-25 00:27",
         "artistName": "James Taylor",
         "trackName": "Fire and Rain",
-        "msPlayed": 98390
+        "msPlayed": 98390,
+        "liked": true
     }
 ]

@@ -14,4 +14,12 @@ export class AppService {
     return this.songsPlayed;
   }
 
+  getProfileLiked(): SongPlay[] {
+    return this.songsPlayed.filter(song => song.liked === true)
+  }
+
+  getSongById(songId: number): SongPlay {
+    return this.songsPlayed.find(song => song.songId == songId)
+  }
+
 }
