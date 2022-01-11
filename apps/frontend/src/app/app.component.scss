@@ -2,18 +2,19 @@
  * Remove template code below
  */
 :host {
-  display: block;
+  // display: block;
   font-family: sans-serif;
-  min-width: 300px;
-  max-width: 1000px;
-  margin: 50px auto;
+  // min-width: 300px;
+  // max-width: 1000px;
+  // margin: 50px auto;
 }
 
 header {
-  background-color: #143055;
+  background-color: #006ac3;
   color: white;
   padding: 5px;
   border-radius: 3px;
+  margin-bottom: 20px;
 }
 
 main {
@@ -30,10 +31,15 @@ h1 {
   font-size: 24px;
 }
 
-thead {
-  background-color: rgb(142, 172, 182);
+thead {  
+  font-weight: bold;
+  color: #006ac3;
+  td {
+    padding: 10px;
+    border-bottom: solid 1px black;
+  }
 }
 
-tr {
-  background-color: rgb(189, 217, 226);
+td {
+  padding: 10px;
 }
