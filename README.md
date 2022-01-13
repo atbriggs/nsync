@@ -8,22 +8,46 @@
 
 ## To run the apps
 
-- Clone this repo to your local computer
-- ***(Optional)*** Navigate to the main folder in a terminal and use command `nvm use` to set the same `nodejs` version 
-- Navigate to the main folder in a terminal and use command `npm i` to install needed packages
-- Navigate to the main folder and type command `npm run start:frontend` to start the front end. Navigate to `http://localhost:4200/`
-- Navigate to the main folder and type command `npm run start:backend` to start the back end. Navigate to `http://localhost:3333/songs` for the base path
+### Getting the source code
+
+To get started, it is required to have a copy of this code running on development environment of choice.
+
+- Navigate to the directory of choice
+- Clone this repository using command provided below
+- Optional step: choose the `nodejs` version 
+- Install required packages 
 
 ```shell
-git clone https://github.com/atbriggs/nsync
-cd nsync 
-nvm use
-npm i 
-npm run start:frontend
-npm run start:backend
+    git clone https://github.com/atbriggs/nsync
+    cd nsync 
+    nvm use
+    npm i 
 ```
 
-> The above commands can be different depending on operating system
+### Running the frontend 
+
+To make the frontend code accessible in the browser: 
+
+- Launch the command line terminal of choice
+- Navigate to the project's root directory
+- To start the frontend, type in the terminal the following command `npm run start:frontend`
+- The `nodejs` frontend server will available on the URL: [http://localhost:4200/](http://localhost:4200/)
+
+> The ***root directory***, is the top level directory(folder) the project is located, on the development environment of choice.
+
+### Running the backend 
+
+To make the backend code available to the frontend calls, follow the following steps 
+
+- Using a second tab on the terminal of choice
+- Navigate to the project's root directory
+- To make backend capable of answering frontend calls, type in the second tab the following command `npm run start:backend`
+- For testing sakes, navigate to [http://localhost:3333/songs](http://localhost:3333/songs) for the base path 
+- The backend will be ready, if the list of songs is displayed as a JSON feed
+
+> ***[JSON](https://www.json.org/json-en.html)*** is a data representation widely adopted for ***[REST](https://en.wikipedia.org/wiki/Representational_state_transfer)*** APIs
+
+> The above commands can be slightly different from one operating system, to another. However, the end-result should be the same across the board.
 
 ## The Challenges
 
