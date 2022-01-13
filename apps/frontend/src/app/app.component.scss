@@ -31,11 +31,14 @@ h1 {
   font-size: 24px;
 }
 
+table {
+  margin: 0 auto;
+}
+
 thead {  
   font-weight: bold;
   color: #006ac3;
   td {
-    padding: 10px;
     border-bottom: solid 1px black;
   }
 }
