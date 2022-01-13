@@ -1,28 +1,22 @@
 import { NotFoundException, Injectable } from '@nestjs/common';
-import { Args, Field, Int, ArgsType, Query, Resolver } from '@nestjs/graphql';
+import { Args, Mutation, Query, Resolver, Subscription } from '@nestjs/graphql';
+import { PubSub } from 'graphql-subscriptions';
+import { NewRecipeInput } from './dto/new-recipe.input';
+import { RecipesArgs } from './dto/recipes.args';
+import { RecipesService } from './recipes.service';
 import { SongPlay } from './models/song-play.model';
-import { Max, Min } from 'class-validator';
-@ArgsType()
-export class SongPlayArgs{
-  @Field(type => Int)
-  @Min(0)
-  skip = 0;
 
-  @Field(type => Int)
-  @Min(1)
-  @Max(50)
-  take = 25;
-}
+const pubSub = new PubSub();
 
 @Injectable() export class SongPlayService {
   //@todo add a method to get the song plays from the json database
 
   findOneById(id: string): Promise<SongPlay> {
-    return new Promise((resolve, reject) => ({id} as SongPlay));
+    return new Promise({resolve: () => ({} as SongPlay)});
   }
 
-  findAll(args: SongPlayArgs): Promise<SongPlay[]> {
-    return new Promise((resolve, reject) => ([{}] as SongPlay[])});
+  findAll(): Promise<SongPlay[]> {
+    return new Promise({resolve: () => ([{}] as SongPlay[])});
   }
 
 }
@@ -43,7 +37,26 @@ export class SongPlayResolver {
   }
 
   @Query(returns => [SongPlay])
-  songPlays(@Args() songPlayArgs: SongPlayArgs): Promise<SongPlay[]> {
-    return this.songPlayService.findAll(songPlayArgs);
+  songPlays(@Args() recipesArgs: SongPlayArgs): Promise<SongPlay[]> {
+    return this.songPlayService.findAll(recipesArgs);
+  }
+
+  @Mutation(returns => SongPlay)
+  async addRecipe(
+    @Args('newRecipeData') newRecipeData: NewRecipeInput,
+  ): Promise<SongPlay> {
+    const recipe = await this.songPlayService.create(newRecipeData);
+    pubSub.publish('recipeAdded', { recipeAdded: recipe });
+    return recipe;
+  }
+
+  @Mutation(returns => Boolean)
+  async removeRecipe(@Args('id') id: string) {
+    return this.songPlayService.remove(id);
+  }
+
+  @Subscription(returns => SongPlay)
+  recipeAdded() {
+    return pubSub.asyncIterator('recipeAdded');
   }
 }
