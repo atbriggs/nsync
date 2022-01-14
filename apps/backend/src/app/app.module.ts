@@ -9,6 +9,7 @@ import { join } from 'path';
   imports: [
     SongsGraphqlModule,
     GraphQLModule.forRoot({
+      playground: true,
       installSubscriptionHandlers: true,
       autoSchemaFile: join(process.cwd(), 'apps/backend/src/app/schema.gql'),
       sortSchema: true,
