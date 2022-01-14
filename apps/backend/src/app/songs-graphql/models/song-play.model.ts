@@ -3,7 +3,7 @@ import { Field, ID, ObjectType } from '@nestjs/graphql';
 @ObjectType({ description: 'song-play ' })
 export class SongPlay {
   @Field(type => ID)
-  id: string;
+  songId: number;
 
   @Field()
   trackName: string;
@@ -12,8 +12,11 @@ export class SongPlay {
   artistName: string;
 
   @Field()
-  endTime: Date;
+  endTime: string;
   
   @Field()
   msPlayed: number;
+
+  @Field()
+  liked: boolean;
 }

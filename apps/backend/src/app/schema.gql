@@ -2,21 +2,18 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-"""
-A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
-"""
-scalar DateTime
-
 type Query {
-  songPlay(id: String!): SongPlay!
-  songPlays(skip: Int = 0, take: Int = 25): [SongPlay!]!
+  likedSongs: [SongPlay!]!
+  playedSongs: [SongPlay!]!
+  songById(id: Float!): SongPlay!
 }
 
 """song-play """
 type SongPlay {
   artistName: String!
-  endTime: DateTime!
-  id: ID!
+  endTime: String!
+  liked: Boolean!
   msPlayed: Float!
+  songId: ID!
   trackName: String!
 }
