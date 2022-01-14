@@ -9,26 +9,28 @@
     <thead>
 
       <td *ngFor="let column of columns">
-        <div class="column-header"> {{column.name}}  <button  [ngClass]="{'up' : 'btn-up', 'down' : 'btn-down', 'none' : 'btn-basic'}[column.direction]" (click)="newDirection(column)"></button> </div>
-       
+        <div class="column-header" (click)="newDirection(column)"
+          [ngClass]="column.direction== 'none' ? 'not_active' : 'active'">
+          {{column.name}}
+          <img [src]="'../assets/arrow-'+column.direction+'-svgrepo-com.svg'" class="icon"/>
+        </div>
+
       </td>
     </thead>
-    <tr *ngFor="let song of songs$|async">
-      <td>{{ song.trackName }}</td>
-      <td>{{ song.artistName }}</td>
-      <td>{{ song.endTime | date:'short' }}</td>
-    </tr>
+    <tbody>
+      <tr *ngFor="let song of songs$|async">
+        <td>{{ song.trackName }}</td>
+        <td>{{ song.artistName }}</td>
+        <td>{{ song.endTime | date:'short' }}</td>
+      </tr>
+    </tbody>
 
-   
 
-  
   </table>
 </main>
 
 <footer>
-  <p>Author: Rbc team</p>
-  <p>
-    <a target="_blank" href="https://icons8.com/icon/86293/down">Down</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-    <a target="_blank" href="https://icons8.com/icon/87702/up">Up</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-    <a target="_blank" href="https://icons8.com/icon/85458/minus">Minus</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></p>
+  <small>
+    icons by <a target="_blank" href="https://www.svgrepo.com/">svgrepo</a>
+  </small>
 </footer>

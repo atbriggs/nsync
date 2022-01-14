@@ -21,8 +21,23 @@ main {
   padding: 0 36px;
 }
 
-p {
-  text-align: center;
+table {
+  border-collapse: collapse;
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+}
+tr:nth-child(even) {
+  background-color: #006ac31a;
+}
+
+thead {
+  td {
+    border-bottom: solid thin #f2f2f2;
+  }
+}
+td {
+  padding: 20px;
 }
 
 h1 {
@@ -31,41 +46,14 @@ h1 {
   font-size: 24px;
 }
 
-table {
-  margin: 0 auto;
-}
-
-thead {  
-  font-weight: bold;
-  color: #006ac3;
-  td {
-    border-bottom: solid 1px black;
-  }
-}
-
-td {
-  padding: 10px;
-}
-
-button {
-  border:none;
-  border-radius: 50%;
-  padding: 10px;
-  background: no-repeat left center;
-  background-size: cover;
-}
-.btn-basic {
-  background-image:url('../assets/minus-svgrepo-com.svg') ;
-} 
-
-.btn-down{
-  background-image:url('../assets/arrow-down-svgrepo-com.svg');
-} 
-
-.btn-up{
-  background-image:url('../assets/arrow-up-svgrepo-com.svg');
-}  
-.column-header{
+.column-header {
   display: flex;
   justify-content: space-between;
+  font-weight: bold;
+}
+.active {
+  color: #006ac3;
+  .icon {
+    filter: invert(24%) sepia(46%) saturate(4418%) hue-rotate(193deg) brightness(96%) contrast(101%);
+  }
 }
