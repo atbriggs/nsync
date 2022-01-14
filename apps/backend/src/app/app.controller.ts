@@ -1,5 +1,5 @@
-import { Controller, Get } from "@nestjs/common";
-import { SongsResponse } from "@nsync/data";
+import { Controller, Get, Param } from "@nestjs/common";
+import { SongDetailResponse, SongPlay, SongsResponse } from "@nsync/data";
 
 import { AppService } from "./app.service";
 
@@ -7,10 +7,24 @@ import { AppService } from "./app.service";
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
+  @Get("songs")
   getData(): SongsResponse {
     return {
       songPlays: this.appService.getSongsPlayed()
     };
+  }
+
+  @Get("profile/liked")
+  getProfileLiked(): SongsResponse {
+    return {
+      songPlays: this.appService.getProfileLiked()
+    }
+  }
+
+  @Get("songs/:songId")
+  getSongById(@Param() params: {songId: number}): SongDetailResponse {
+    return {
+      songPlay: this.appService.getSongById(params.songId)
+    }
   }
 }
