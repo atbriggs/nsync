@@ -22,9 +22,9 @@ export class AppController {
   }
 
   @Get("songs/:songId")
-  getSongById(@Param() params: {songId: number}): SongDetailResponse {
+  async getSongById(@Param() params: {songId: number}): Promise<SongDetailResponse> {
     return {
-      songPlay: this.appService.getSongById(params.songId)
+      songPlay: await this.appService.getSongById(params.songId)
     }
   }
 }
