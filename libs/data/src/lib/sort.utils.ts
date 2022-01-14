@@ -1,3 +1,4 @@
+import { SongDetailResponse } from "..";
 import { SongPlay } from "./data";
 
 export namespace SortUtils {
@@ -25,12 +26,23 @@ export namespace SortUtils {
         name: 'Last played',
     }
 
+    export const likedColumn = {
+        key: 'liked',
+        name: 'Liked',
+    }
+
+
     export function sortSongs(selectedColumn: Column, songs: SongPlay[]) {
 
         let newSongsList = songs.sort(
             function (a, b) {
-                return a[selectedColumn.key].localeCompare(b[selectedColumn.key]);
+                if (a[selectedColumn.key].localeCompare) {
+                    return a[selectedColumn.key].localeCompare(b[selectedColumn.key]);
+                }
+                return Number(a[selectedColumn.key]) - Number(b[selectedColumn.key])
+
             }
+
         )
         if (selectedColumn.direction === Direction.UP) {
             newSongsList = newSongsList.reverse()
