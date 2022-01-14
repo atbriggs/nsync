@@ -2,6 +2,8 @@ import { NotFoundException, Injectable } from '@nestjs/common';
 import { Args, Field, Int, ArgsType, Query, Resolver } from '@nestjs/graphql';
 import { SongPlay } from './models/song-play.model';
 import { Max, Min } from 'class-validator';
+import { AppService } from '../app.service';
+
 @ArgsType()
 export class SongPlayArgs{
   @Field(type => Int)
@@ -14,28 +16,16 @@ export class SongPlayArgs{
   take = 25;
 }
 
-@Injectable() export class SongPlayService {
-  //@todo add a method to get the song plays from the json database
-
-  findOneById(id: string): Promise<SongPlay> {
-    return new Promise((resolve, reject) => ({id} as SongPlay));
-  }
-
-  findAll(args: SongPlayArgs): Promise<SongPlay[]> {
-    return new Promise((resolve, reject) => ([{}] as SongPlay[]));
-  }
-
-}
 
 
 @Resolver(of => SongPlay)
 export class SongPlayResolver {
-  constructor(private readonly songPlayService: SongPlayService) {}
+  constructor(private readonly songPlayService: AppService) {}
 
   //@todo Find By ID may not be feasible, but findOneByName() can be used
   @Query(returns => SongPlay)
-  async songPlay(@Args('id') id: string): Promise<SongPlay> {
-    const songPlay = await this.songPlayService.findOneById(id);
+  async songById(@Args('id') id: number): Promise<SongPlay> {
+    const songPlay = await this.songPlayService.getSongById(id);
     if (!songPlay) {
       throw new NotFoundException(id);
     }
@@ -43,7 +33,14 @@ export class SongPlayResolver {
   }
 
   @Query(returns => [SongPlay])
-  songPlays(@Args() songPlayArgs: SongPlayArgs): Promise<SongPlay[]> {
-    return this.songPlayService.findAll(songPlayArgs);
+  async playedSongs(): Promise<SongPlay[]> {
+    const songsPlayed = await this.songPlayService.getSongsPlayed();
+    return songsPlayed;
+  }
+
+  @Query(returns => [SongPlay])
+  async likedSongs(): Promise<SongPlay[]> {
+    const songsPlayed = await this.songPlayService.getProfileLiked();
+    return songsPlayed;
   }
 }
