@@ -15,8 +15,8 @@ const pubSub = new PubSub();
     return new Promise({resolve: () => ({} as SongPlay)});
   }
 
-  findAll(): Promise<SongPlay[]> {
-    return new Promise({resolve: () => ([{}] as SongPlay[])});
+  findAll(args: SongPlayArgs): Promise<SongPlay[]> {
+    return new Promise((resolve, reject) => ([{}] as SongPlay[]));
   }
 
 }
