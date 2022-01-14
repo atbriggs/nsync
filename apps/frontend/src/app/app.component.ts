@@ -4,6 +4,7 @@ import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 
 import { filter, map } from 'rxjs/operators';
 import { SongsService } from './services/songs.service';
+import { easterEgg } from './utils/data';
 
 
 @Component({
@@ -32,6 +33,11 @@ export class AppComponent {
   newDirection(selectedColumn: SortUtils.Column) {
     this.selectedColumn.next(selectedColumn)
   }
-
+  openKonami(value:easterEgg){
+    switch(value){
+      case easterEgg.Konami: return console.log("implement konomi here");
+      case easterEgg.RickRoll: return console.log("implement rickroll here")
+    }
+  }
 
 }
