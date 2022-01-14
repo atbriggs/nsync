@@ -42,29 +42,23 @@ To make the backend code available to the frontend calls, follow the following s
 - Using a second tab on the terminal of choice
 - Navigate to the project's root directory
 - To make backend capable of answering frontend calls, type in the second tab the following command `npm run start:backend`
-- For testing sakes, navigate to [http://localhost:3333/songs](http://localhost:3333/songs) for the base path 
+- For testing sakes, navigate to [http://localhost:3333/songs](http://localhost:3333/songs) for the base path
 - The backend will be ready, if the list of songs is displayed as a JSON feed
+- Other Endpoints include:
+```
+/profile/liked - Returns a list of liked songs from the prolfile
+/songs/:songid - Returns Song details based on the queried id
+```
 
 > ***[JSON](https://www.json.org/json-en.html)*** is a data representation widely adopted for ***[REST](https://en.wikipedia.org/wiki/Representational_state_transfer)*** APIs
 
 > The above commands can be slightly different from one operating system, to another. However, the end-result should be the same across the board.
 
-## The Challenges
-
-### Back end
-
-1. Modify the current endpoint to return seconds played instead of milliseconds
-1. Add a `/songs/greatestSongOfAllTime` endpoint that returns the string `Kiss from a Rose by Seal`. In general you wouldn't hard-code data but this is a universal truth so we're safe to break that rule here. 
-1. Add another endpoint to only return songs that were actually listened to (i.e. `/songs/listened`)
-1. Add a query parameter to one of the endpoints so that we can request only a certain band's songs be returned (i.e. `/songs?band=Spice%20Girls`)
-1. This may take a few days/weeks but you can request and download your own Spotify data and use that instead of `andrews-playlist.json`: https://www.spotify.com/ca-en/account/privacy/ (we're using a subset of my `StreamingHistory0.json` file)
-
-### Front end
-
-1. Remove the End Time column from the table
-1. Change it so that the data is pulled from the `/songs/listened` endpoint instead of `/songs` in `songs.service.ts` if you did the corresponding Back End challenge
-1. Make a new section on the page that shows which song was listened to multiple times
-1. Make a new section on the page that shows the bands in order of how many of their songs were played
+## GraphQL and Angular
+Some resources to look at:
+- [Apollo Angular GraphQL client](https://apollo-angular.com/docs/get-started)
+- [Resources for Angular + GraphQL By Hasura](https://github.com/hasura/awesome-angular-graphql)
+- [Hasura's GraphQL + Angular course](https://hasura.io/learn/graphql/angular-apollo/introduction/)
 
 ## How this repo was built
 
