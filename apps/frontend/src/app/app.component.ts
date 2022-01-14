@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SongPlay, SortUtils } from '@nsync/data';
+import {  SongPlay, SortUtils } from '@nsync/data';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 
 import { filter, map } from 'rxjs/operators';
@@ -14,10 +14,10 @@ import { easterEgg } from './utils/data';
 })
 export class AppComponent {
   title = 'frontend';
-  columns: SortUtils.Column[] = [SortUtils.trackColumn, SortUtils.artistColumn, SortUtils.endTimeColumn]
+  columns: SortUtils.Column[] = [SortUtils.trackColumn, SortUtils.artistColumn, SortUtils.endTimeColumn,SortUtils.likedColumn]
   selectedColumn: BehaviorSubject<SortUtils.Column> = new BehaviorSubject(SortUtils.trackColumn)
   songs$: Observable<SongPlay[]> =
-    combineLatest([this.selectedColumn, this.songService.songsSubject])
+    combineLatest([this.selectedColumn, this.songService.songs$])
       .pipe(
         filter(([column, song]) => !!column && !!song),
         map(([column, song]) => {
@@ -34,10 +34,7 @@ export class AppComponent {
     this.selectedColumn.next(selectedColumn)
   }
   openKonami(value:easterEgg){
-    switch(value){
-      case easterEgg.Konami: return console.log("implement konomi here");
-      case easterEgg.RickRoll: return console.log("implement rickroll here")
-    }
+   window.location.href='https://youtu.be/izGwDsrQ1eQ?t=26'
   }
 
 }

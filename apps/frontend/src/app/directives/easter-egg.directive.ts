@@ -6,9 +6,8 @@ import { easterEgg } from '../utils/data';
   selector: '[neverGonnaGiveYouUp]'
 })
 export class EasterEggDirective {
-    @Output() private neverGonnaGiveYouUp: EventEmitter<easterEgg>= new EventEmitter<easterEgg>();
+    @Output() private neverGonnaGiveYouUp: EventEmitter<void>= new EventEmitter<void>();
     private sequence: string[]= []
-    private rickRollCode: string= 'rickroll'
     private konamiCode: string[]= [
       'arrowup', 'arrowup',
       'arrowdown', 'arrowdown',
@@ -16,32 +15,27 @@ export class EasterEggDirective {
       'arrowleft', 'arrowright',
       'b', 'a'
     ];
-  ​
     @HostListener('window:keydown', ['$event'])
     handleKeyboardEvent(event: KeyboardEvent) {
       if (event.key) {
         this.sequence.push(event.key.toLowerCase());
   ​
         if (this.sequence.length > this.konamiCode.length) {
-          this.sequence=[];
+          this.sequence.shift();
         }
-       const easterEgg= this.getEasterEgg()
-        if (easterEgg) {
-          this.neverGonnaGiveYouUp.emit(easterEgg);
-          this.sequence=[];
+        if (this.getEasterEgg()) {
+          this.neverGonnaGiveYouUp.emit();
         }
   
       }
     }
   ​
     getEasterEgg(): easterEgg {
-      if (this.rickRollCode===this.sequence.join('')){
-        return easterEgg.RickRoll;
-      }
       if (this.konamiCode.every((code: string, index: number) => code === this.sequence[index])){
         return easterEgg.Konami;
       }
-    
     }
+
+
 
 }

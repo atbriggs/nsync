@@ -22,6 +22,13 @@
         <td>{{ song.trackName }}</td>
         <td>{{ song.artistName }}</td>
         <td>{{ song.endTime | date:'short' }}</td>
+        <td>
+          <ng-container *ngIf="song.liked; else brokenHeart">
+            <img src="../assets/heart-svgrepo-full.svg" class="icon"/>
+          </ng-container>
+          <ng-template #brokenHeart>  <img src="../assets/heart-svgrepo-broken.svg" class="icon"/> </ng-template>
+          
+         </td>
       </tr>
     </tbody>
 
