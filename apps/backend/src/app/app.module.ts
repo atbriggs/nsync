@@ -10,6 +10,7 @@ import { join } from 'path';
     SongsGraphqlModule,
     GraphQLModule.forRoot({
       playground: true,
+      introspection: true,
       installSubscriptionHandlers: true,
       autoSchemaFile: join(process.cwd(), 'apps/backend/src/app/schema.gql'),
       sortSchema: true,
