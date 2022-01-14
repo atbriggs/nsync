@@ -18,8 +18,12 @@ export class AppService {
     return this.songsPlayed.filter(song => song.liked === true)
   }
 
-  getSongById(songId: number): SongPlay {
+  async getSongById(songId: number): Promise<SongPlay> {
+    await this.delay(250)
     return this.songsPlayed.find(song => song.songId == songId)
   }
 
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+  }
 }
