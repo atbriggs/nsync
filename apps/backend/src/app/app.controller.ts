@@ -22,9 +22,15 @@ export class AppController {
   }
 
   @Get("songs/:songId")
-  getSongById(@Param() params: {songId: number}): SongDetailResponse {
+  async getSongById(@Param() params: {songId: number}): Promise<SongDetailResponse> {
+    await this.delay(250);
     return {
       songPlay: this.appService.getSongById(params.songId)
     }
+  }
+
+  
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
   }
 }
