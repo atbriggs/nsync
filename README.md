@@ -87,6 +87,7 @@ Now that your frontend and backend are up and running, it’s time to have some 
    3. Compare the REST implementation to your GraphQL one - which one do you prefer?
    4. Have some fun, is there an improvement you’d like to try to the front end/back end?
    5. Explore, is there anything in the code that you particularly like?
+   6. Andrew loves validation, which of the songs do you like? Feel free to share it in Discord
 
 ### How to Switch to GraphQL
 
