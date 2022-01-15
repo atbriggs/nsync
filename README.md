@@ -1,4 +1,5 @@
-# Nsync
+# Give yourself a REST with GraphQL
+In this workshop, we'll be using technologies typical in RBC Digital to explore our friend's musical preferences. Our data comes from "Andrew's top 2020 Spotify Playlist", and we've created an Angular App to display some interesting info about his tunes. While there are a lot of things going on in this reposotiry, today's workshop will focus on implementing GraphQL to query Andrew's song data. Feel free to explore the code, you might find some interesting surprises!
 
 ## Pre-requisites
 
@@ -76,14 +77,24 @@ More in depth instructions about what was done can be found through the Nx tutor
 
 Andrew's top 2020 Spotify Playlist: [https://open.spotify.com/playlist/37i9dQZF1EMfrw1RJpCrws?si=R3LSkXohQiC76G62w12f5A](https://open.spotify.com/playlist/37i9dQZF1EMfrw1RJpCrws?si=R3LSkXohQiC76G62w12f5A)
 
-## Detailed Instructions for switching to GraphQL
 
+# Workshop
+Now that your frontend and backend are up and running, it’s time to have some fun! You’ll notice that the backend code is currently using REST to query song data. The goal of this workshop is to replace those REST calls with GraphQL, so that we can use GraphQL to query Spotify songs.
+
+## Deliverables
+   1. Run a GraphQL service
+   2. Edit the songs service to query the data using GraphQL
+   3. Compare the REST implementation to your GraphQL one - which one do you prefer?
+   4. Have some fun, is there an improvement you’d like to try to the front end/back end?
+   5. Explore, is there anything in the code that you particularly like?
+
+### How to Switch to GraphQL
 
 Add Apollo: `ng add apollo-angular`
 
 Say yes to run the command that was recommended instead: `npm install apollo-angular && npx nx g apollo-angular:ng-add`
 
-When it asks for the URL to the graphQL service put in `http://localhost:3333/graphql`
+When it asks for the URL to the GraphQL service put in `http://localhost:3333/graphql`
 
 Modify `apps/frontend/src/app/services/songs.service.ts` to have the GraphQL service instead:
 ```
