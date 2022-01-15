@@ -14,6 +14,7 @@ async function bootstrap() {
   // app.setGlobalPrefix(globalPrefix);
   // process.env.PLAYGROUND_URL === "http://localhost:3000"
   const port = process.env.PORT || 3333;
+  app.enableCors();
   await app.listen(port, () => {
     Logger.log("Listening at http://localhost:" + port + "/");
   });

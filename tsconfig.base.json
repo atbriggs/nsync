@@ -12,7 +12,8 @@
     "module": "esnext",
     "lib": [
       "es2017",
-      "dom"
+      "dom",
+      "esnext.asynciterable"
     ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
@@ -23,7 +24,8 @@
       ]
     },
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "exclude": [
     "node_modules",

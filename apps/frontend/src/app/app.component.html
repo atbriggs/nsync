@@ -18,7 +18,7 @@
       </td>
     </thead>
     <tbody>
-      <tr *ngFor="let song of songs$|async">
+      <tr *ngFor="let song of songsGraphQl$|async">
         <td>{{ song.trackName }}</td>
         <td>{{ song.artistName }}</td>
         <td>{{ song.endTime | date:'short' }}</td>

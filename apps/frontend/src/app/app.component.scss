@@ -49,6 +49,7 @@ h1 {
 .column-header {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   font-weight: bold;
 }
 .active {
