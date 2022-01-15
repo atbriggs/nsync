@@ -75,3 +75,52 @@ Some resources to look at:
 More in depth instructions about what was done can be found through the Nx tutorials _[link](https://nx.dev/latest/angular/tutorial/01-create-application)_ 
 
 Andrew's top 2020 Spotify Playlist: [https://open.spotify.com/playlist/37i9dQZF1EMfrw1RJpCrws?si=R3LSkXohQiC76G62w12f5A](https://open.spotify.com/playlist/37i9dQZF1EMfrw1RJpCrws?si=R3LSkXohQiC76G62w12f5A)
+
+## Detailed Instructions for switching to GraphQL
+
+
+Add Apollo: `ng add apollo-angular`
+
+Say yes to run the command that was recommended instead: `npm install apollo-angular && npx nx g apollo-angular:ng-add`
+
+When it asks for the URL to the graphQL service put in `http://localhost:3333/graphql`
+
+Modify `apps/frontend/src/app/services/songs.service.ts` to have the GraphQL service instead:
+```
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { SongPlay } from '@nsync/data';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Apollo, gql } from 'apollo-angular';
+
+const GET_SONG = gql`
+  query songs {
+    playedSongs {
+      trackName,
+      artistName,
+      songId,
+      liked,
+      endTime
+    }
+  }
+`;
+
+@Injectable({
+  providedIn: 'root'
+})
+export class SongsService {
+
+  songs$: Observable<SongPlay[]> =this.apollo.watchQuery<{playedSongs:SongPlay[]}>({
+      query: GET_SONG
+    })
+    .valueChanges.pipe(map(x =>{
+
+      return[...x.data.playedSongs]
+    
+    }));
+
+  constructor(private http: HttpClient, private apollo:Apollo) { }
+
+}
+```
