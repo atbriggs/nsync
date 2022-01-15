@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SongDetailResponse, SongPlay, SongsResponse } from '@nsync/data';
-import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
-import { map, mergeMap, pluck, switchMap } from 'rxjs/operators';
+import { combineLatest, Observable } from 'rxjs';
+import { map, mergeMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'

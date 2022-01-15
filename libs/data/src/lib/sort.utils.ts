@@ -16,19 +16,23 @@ export namespace SortUtils {
     export const trackColumn = {
         key: 'trackName',
         name: 'Track',
+        direction: Direction.NONE
     }
     export const artistColumn = {
         key: 'artistName',
         name: 'Artist',
+        direction: Direction.NONE
     }
     export const endTimeColumn = {
         key: 'endTime',
         name: 'Last played',
+        direction: Direction.NONE
     }
 
     export const likedColumn = {
         key: 'liked',
         name: 'Liked',
+        direction: Direction.NONE
     }
 
 

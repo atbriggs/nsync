@@ -13,6 +13,7 @@ async function bootstrap() {
   // const globalPrefix = "songs";
   // app.setGlobalPrefix(globalPrefix);
   // process.env.PLAYGROUND_URL === "http://localhost:3000"
+  app.enableCors();
   const port = process.env.PORT || 3333;
   await app.listen(port, () => {
     Logger.log("Listening at http://localhost:" + port + "/");
